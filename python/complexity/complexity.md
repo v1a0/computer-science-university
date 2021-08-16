@@ -14,6 +14,7 @@ https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt
 |               |              |             |                                  |
 | Slice         | l[a:b]       | O(b-a)	     | l[1:5]:O(l)/l[:]:O(len(l)-0)=O(N)|
 | Extend        | l.extend(...)| O(len(...)) | depends only on len of extension |
+| Add to        | l1 + l2      | O(len(...)) | O(N) (Extend)                    |
 | Construction  | list(...)    | O(len(...)) | depends on length of ... iterable|
 |               |              |             |                                  |
 | check ==, !=  | l1 == l2     | O(N)        |                                  |
