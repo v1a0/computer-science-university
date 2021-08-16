@@ -16,7 +16,7 @@
 
 ## Модель канала связи
 
-![Канал](/Users/iva/Documents/GitHub/computer-science-university/Network/1-Physical-layer/Function/Chanel.png)
+![Канал](/Users/iva/Documents/GitHub/computer-science-university/Network/1-Physical-layer/Function/chanel.png)
 
 ### Характеристики канала связи
 
