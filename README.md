@@ -15,3 +15,5 @@
             - [notes](./python/csc-2015/4.md)
         - [5. Встроенные коллекции и модуль collections](https://compscicenter.ru/courses/python/2015-autumn/classes/1476/)
             - [notes](./python/csc-2015/5.md)
+        - [6. Классы](https://compscicenter.ru/courses/python/nsk/2018-autumn/classes/4273/) ?
+            - [notes]()
