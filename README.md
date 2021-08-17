@@ -11,5 +11,7 @@
             - [notes](./python/csc-2015/2.md)
         - [3. Декораторы и модуль functools](https://compscicenter.ru/courses/python/2015-autumn/classes/1387/)
             - [notes](./python/csc-2015/3.md)
-        - [4. Строки, байты, файлы и ввод/вывод]()
-            
+        - [4. Строки, байты, файлы и ввод/вывод](https://compscicenter.ru/courses/python/2015-autumn/classes/1388/)
+            - [notes](./python/csc-2015/4.md)
+        - [5. Встроенные коллекции и модуль collections](https://compscicenter.ru/courses/python/2015-autumn/classes/1476/)
+            - [notes](./python/csc-2015/5.md)
