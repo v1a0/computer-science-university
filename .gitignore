@@ -3,6 +3,8 @@
 #DS
 .DS_Store
 
+
+# Ztr env files
 .ztr-directory
 *.ztr-directory
 **/.ztr-directory
