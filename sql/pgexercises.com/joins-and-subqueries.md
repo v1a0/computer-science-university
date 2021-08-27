@@ -1,5 +1,7 @@
 # Joins ans Subqueries (Solutions)
 
+![basic-sql-schema.png](..\..\img\basic-sql-schema.png)
+
 
 
 ## Simple join
