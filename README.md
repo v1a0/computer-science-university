@@ -21,10 +21,10 @@
 ## Contributors
 
 <a href="https://github.com/iva1010">
-<img src="https://avatars.githubusercontent.com/u/58352066?v=4" style="height: 50px;">
+<img src="https://avatars.githubusercontent.com/u/58352066?v=4" height="50px">
 </a>
 
 <a href="https://github.com/v1a0">
-<img src="https://avatars.githubusercontent.com/u/54343363?v=4" style="height: 50px;">
+<img src="https://avatars.githubusercontent.com/u/54343363?v=4" height="50px">
 </a>
 
