@@ -21,8 +21,8 @@
        
 - PostgreSQL
     - [pgexercises.com](pgexercises.com)
-        - [Simple SQL Queries (Solutions)](./sql/pgexercises.com/basic-sql.md) 
-        - [Joins ans Subqueries (Solutions)](./sql/pgexercises.com/joins-and-subqueries.md)
+        - [Simple SQL Queries](./sql/pgexercises.com/basic-sql.md) 
+        - [Joins ans Subqueries](./sql/pgexercises.com/joins-and-subqueries.md)
 
 
 
