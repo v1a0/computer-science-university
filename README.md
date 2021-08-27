@@ -17,6 +17,14 @@
             - [notes](./python/csc-2015/5.md)
         - [6. Классы](https://compscicenter.ru/courses/python/nsk/2018-autumn/classes/4273/) ?
             - [notes]()
+       
+       
+- PostgreSQL
+    - pgexercises.com
+        - [Simple SQL Queries (Solutions)](./sql/pgexercises.com/basic-sql.md) 
+        - [Joins ans Subqueries (Solutions)](./sql/pgexercises.com/joins-and-subqueries.md)
+
+
 
 ## Contributors
 
