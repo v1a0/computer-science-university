@@ -17,3 +17,14 @@
             - [notes](./python/csc-2015/5.md)
         - [6. Классы](https://compscicenter.ru/courses/python/nsk/2018-autumn/classes/4273/) ?
             - [notes]()
+
+## Contributors
+
+<a href="https://github.com/iva1010">
+<img src="https://avatars.githubusercontent.com/u/58352066?v=4" style="height: 50px;">
+</a>
+
+<a href="https://github.com/v1a0">
+<img src="https://avatars.githubusercontent.com/u/54343363?v=4" style="height: 50px;">
+</a>
+
