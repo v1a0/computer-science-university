@@ -1,6 +1,9 @@
 # Modifying data
 
-![basic-sql-schema.png](..\..\img\basic-sql-schema.png)
+![sql-modifying-data-1.png](../../img/sql-modifying-data-1.png)
+
+
+![basic-sql-schema.png](../../img/basic-sql-schema.png)
 
 
 ## Insert

@@ -1,6 +1,6 @@
 # Joins ans Subqueries (Solutions)
 
-![sql-joins-1.png](..\..\img\sql-joins-1.png)
+![sql-joins-1.png](../../img/sql-joins-1.png)
 
 
 ![basic-sql-schema.png](../../img\basic-sql-schema.png)

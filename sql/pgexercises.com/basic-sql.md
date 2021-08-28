@@ -2,9 +2,10 @@
 
 >>> https://pgexercises.com/questions/basic
 
-![basic-sql-schema.png](..\..\img\basic-sql-schema.png)
-
 ![basic-sql.png](../../img/basic-sql.png)
+
+![basic-sql-schema.png](../../img/basic-sql-schema.png)
+
 
 
 ## Select all
