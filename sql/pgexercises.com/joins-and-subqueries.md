@@ -1,6 +1,9 @@
 # Joins ans Subqueries (Solutions)
 
-![basic-sql-schema.png](..\..\img\basic-sql-schema.png)
+![sql-joins-1.png](..\..\img\sql-joins-1.png)
+
+
+![basic-sql-schema.png](../../img\basic-sql-schema.png)
 
 
 
@@ -37,7 +40,7 @@ FROM cd.bookings INNER JOIN cd.members
 WHERE
 	cd.members.firstname = 'David'
     AND
-    cd.members.surname = 'Farrell'
+    cd.members.surname = 'Farrell';
 ```
 
 ```sql
@@ -68,7 +71,7 @@ WHERE
 	AND
 	bk.starttime < '2012-09-22'
 
-ORDER BY bk.starttime
+ORDER BY bk.starttime;
 ```
 
 
@@ -96,7 +99,7 @@ ORDER BY bks.starttime;
 SELECT DISTINCT m1.firstname, m1.surname
 FROM cd.members as m1 INNER JOIN cd.members as m2 
 ON m1.memid = m2.recommendedby
-ORDER BY m1.surname, m1.firstname
+ORDER BY m1.surname, m1.firstname;
 ```
 
 
@@ -117,7 +120,7 @@ order by surname, firstname;
 SELECT mem.firstname memfname, mem.surname memsname, rec.firstname recfname, rec.surname recsname
 FROM cd.members as mem LEFT OUTER JOIN cd.members as rec
 ON rec.memid = mem.recommendedby
-ORDER BY memsname, memfname
+ORDER BY memsname, memfname;
 ```
 
 ```sql
@@ -140,7 +143,7 @@ FROM cd.bookings bk INNER JOIN cd.facilities fac
 ON fac.facid = bk.facid AND fac.name LIKE '%Tennis Court%'
 INNER JOIN cd.members mem
 ON bk.memid = mem.memid
-ORDER BY member, facility
+ORDER BY member, facility;
 ```
 
 ```sql
@@ -150,7 +153,7 @@ on mems.memid = bks.memid
 inner join cd.facilities facs
 on bks.facid = facs.facid
 where facs.name in  ('Tennis Court 2','Tennis Court 1') 
-order by member, facility
+order by member, facility;
 ```
 
 
@@ -180,7 +183,7 @@ SELECT * FROM (
 	ON bk.memid = mem.memid
 	ORDER BY cost DESC
 
-) res WHERE res.cost > 30
+) res WHERE res.cost > 30;
 ```
 
 ```sql
@@ -198,4 +201,62 @@ where bks.starttime >=  '2012-09-14'
         (mems.memid != 0 and bks.slots*facs.membercost > 30)
     )
 order by cost desc;
+```
+
+
+
+## Sub
+
+> How can you output a list of all members, including the individual who recommended them (if any), without using any joins? Ensure that there are no duplicates in the list, and that each firstname + surname pairing is formatted as a column and ordered.
+
+
+```sql
+SELECT 
+	DISTINCT mem.firstname || ' ' || mem.surname as member,
+	CASE 
+		WHEN mem.recommendedby > 0
+		THEN (
+			SELECT cd.members.firstname || ' ' || cd.members.surname
+			FROM cd.members
+		  	WHERE cd.members.memid = mem.recommendedby
+		  	LIMIT 1
+		  )
+		ELSE NULL
+	END as recommender
+FROM cd.members as mem
+ORDER BY member;
+```
+
+```sql
+SELECT 
+	DISTINCT mem1.firstname || ' ' || mem1.surname as member,
+	(
+		SELECT mem2.firstname || ' ' || mem2.surname
+		FROM cd.members as mem2
+		WHERE mem2.memid = mem1.recommendedby
+	)
+FROM cd.members as mem1
+ORDER BY member;
+```
+
+```sql
+select 
+    distinct mems.firstname ||  ' '  || mems.surname as member,
+    (
+        select recs.firstname ||  ' '  || recs.surname as recommender
+        from cd.members recs
+        where recs.memid = mems.recommendedby
+    ) 
+from cd.members mems
+orderby member;
+```
+
+
+## tjsub
+
+> The [Produce a list of costly bookings](https://pgexercises.com/questions/joins/threejoin2.html) exercise contained some messy logic: we had to calculate the booking cost in both the WHERE clause and the CASE statement. Try to simplify this calculation using subqueries. For reference, the question was:
+> How can you produce a list of bookings on the day of 2012-09-14 which will cost the member (or guest) more than $30? Remember that guests have different costs to members (the listed costs are per half-hour 'slot'), and the guest user is always ID 0. Include in your output the name of the facility, the name of the member formatted as a single column, and the cost. Order by descending cost.
+
+```sql
+select member, facility, cost from  (  select mems.firstname ||  ' '  || mems.surname as member, facs.name as facility,  case  when mems.memid =  0  then bks.slots*facs.guestcost else bks.slots*facs.membercost end  as cost from cd.members mems inner  join cd.bookings bks on mems.memid = bks.memid inner  join cd.facilities facs on bks.facid = facs.facid where bks.starttime >=  '2012-09-14'  and bks.starttime <  '2012-09-15'  )  as bookings where cost >  30  order  by cost desc;
 ```

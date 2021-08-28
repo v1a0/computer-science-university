@@ -23,6 +23,7 @@
     - [pgexercises.com](pgexercises.com)
         - [Simple SQL Queries (Solutions)](./sql/pgexercises.com/basic-sql.md) 
         - [Joins ans Subqueries (Solutions)](./sql/pgexercises.com/joins-and-subqueries.md)
+        - [Modifying data (Solutions)](./sql/pgexercises.com/modifying-data.md)
 
 
 
