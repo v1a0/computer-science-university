@@ -70,10 +70,29 @@
         - [6. Классы](https://compscicenter.ru/courses/python/nsk/2018-autumn/classes/4273/) ?
             - [notes]()
 - PostgreSQL
-    - [pgexercises.com](pgexercises.com)
+    - [pgexercises.com](https://pgexercises.com)
         - [Simple SQL Queries (Solutions)](./sql/pgexercises.com/basic-sql.md) 
         - [Joins ans Subqueries (Solutions)](./sql/pgexercises.com/joins-and-subqueries.md)
         - [Modifying data (Solutions)](./sql/pgexercises.com/modifying-data.md)
+
+- Development
+    - SOLID
+        - [RUS] [Solid принципы (by Sergey Nemchinskiy)](https://www.youtube.com/playlist?list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK)
+            - [SRP (Принцип единственной ответственности, Single Responsibility Principle)](https://www.youtube.com/watch?v=O4uhPCEDzSo&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=1)
+            - [OCP (Открытости/закрытости, Open Closed Principle)](https://www.youtube.com/watch?v=x5OtQiKOG-Q&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=2)
+            - [LSP (Принцип подстановки Барбары Лисков, The Liskov Substitution Principle)](https://www.youtube.com/watch?v=NqvwYcjrwdw&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=3)
+            - [ISP (Принцип Разделения Интерфейса, The Interface Segregation Principle)](https://www.youtube.com/watch?v=d9RJqf2o_Sw&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=4)
+            - [DIP (Принцип инверсии зависимостей, The Dependency Inversion Principle)](https://www.youtube.com/watch?v=Bw6RvCSsETI&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=5)
+    - OOP 
+        - [RUS] Принципы ООП (by Sergey Nemchinskiy)
+            - [1. Инкапсуляция](https://www.youtube.com/watch?v=EvGi6XDgV7w)
+            - [2. Наследование](https://www.youtube.com/watch?v=eI0XzQw3V0Q)
+            - [3. Полиморфизм](https://www.youtube.com/watch?v=Ay_GwOQWPs8)
+    
+    - Transactions
+        - [Транзакции (Владимир Кузнецов)](https://www.youtube.com/playlist?list=PLmqFxxywkatR3Psg4pz0Br0uDHzjR9Sne)
+
+
 
 
 
