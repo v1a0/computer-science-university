@@ -83,6 +83,14 @@
             - [LSP (Принцип подстановки Барбары Лисков, The Liskov Substitution Principle)](https://www.youtube.com/watch?v=NqvwYcjrwdw&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=3)
             - [ISP (Принцип Разделения Интерфейса, The Interface Segregation Principle)](https://www.youtube.com/watch?v=d9RJqf2o_Sw&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=4)
             - [DIP (Принцип инверсии зависимостей, The Dependency Inversion Principle)](https://www.youtube.com/watch?v=Bw6RvCSsETI&list=PLmqFxxywkatQNWLG1IZYUhKoQrnuZHqaK&index=5)
+            - [MY NOTES](./other/solid.md)
+        
+    - KISS
+        - [RUS] [Принцип хорошего кода KISS (Keep It Short and Simple/Stupid)](https://www.youtube.com/watch?v=rix-fkrloq4)
+    
+    - YAGNI
+        - [RUS] [Принцип хорошего кода YAGNI (You Aren't Gonna Need It)](https://www.youtube.com/watch?v=rix-fkrloq4)
+
     - OOP 
         - [RUS] Принципы ООП (by Sergey Nemchinskiy)
             - [1. Инкапсуляция](https://www.youtube.com/watch?v=EvGi6XDgV7w)
