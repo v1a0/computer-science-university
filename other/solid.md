@@ -173,7 +173,7 @@ class Square(Rectangular):
 
 # ISP - Interface Segregation principle
 
-Много интерфейсов предназначенных для клиента — лучше, чем один принцип общего предназначения.
+Много интерфейсов предназначенных для клиента — лучше, чем один интерфейс общего предназначения.
 
 Клиенты не должны зависеть от методов, которые они не используют, 
 т.е. если какой-то метод интерфейса не используется клиентом,
@@ -212,3 +212,230 @@ Class                  Interface
 
 Использовать классы рекомендуется исключительно через интерфейсы. Позволяет в любое место системы встроить дополнительный функционал.
 
+
+
+----
+----
+----
+
+
+# Ещё раз
+
+# SOLID
+
+- Single Responsibility
+- Open-Closed
+- Liskov
+- Interfaces segregation
+- Dependency inversion
+
+
+# Single responsibility principle
+## Принцип единственной ответственности
+
+У модуля должна быть только одна причина для изменения (не очень)
+
+Класс должен отвечать только за какую-то единственную задачу, 
+так чтобы в случае изменения задействовать наименьшее количество модулей.
+
+Также говорят об оси изменений, в процессе разработки она должна проходить только через один класс.
+
+
+```python
+
+"""
+Bad example
+"""
+
+class Car:
+    def __init__(self, color=None, name=None, code=None, id=None):
+        pass
+    
+    def order_car(self):
+        pass
+    
+    def get_cars_from_db(self, color=None, name=None, code=None):
+        pass
+    
+    def get_all_cars(self):
+        pass
+```
+
+```python
+
+"""
+Good example
+"""
+
+class Buyer:
+    def order_car(self):
+        pass
+
+class Database:
+    def get_cars(self, color=None, name=None, code=None):
+        pass
+    
+    def get_all_cars(self):
+        pass
+
+class Car:
+    def __init__(self, color=None, name=None, code=None):
+        pass
+
+```
+
+
+
+# Open-Closed
+
+## Принцип Открытости и Закрытости
+
+Модуль должен быть открыт для расширения, но закрыт для изменения.
+
+Абстракция — интерфейс реализации классов потомков (?)
+
+```python
+
+"""
+Bad Example
+"""
+
+class Car:
+    def __init__(self, brand: str):
+        self.brand = brand
+    
+    @property
+    def price(self):
+        if self.brand == 'BMW':
+            return 2_000_000
+        elif self.brand == 'Honda':
+            return 1_000_000
+        else:
+            return 0
+```
+
+
+```python
+from abc import abstractmethod
+
+"""
+Good Example
+"""
+
+@abstractmethod
+class Car:
+    @property
+    @abstractmethod
+    def price(self):
+        pass
+
+class BMW(Car):
+    @property
+    def price(self):
+        return 2_000_000
+
+class Honda(Car):
+    @property
+    def price(self):
+        return 1_000_000
+```
+
+
+
+# Lickov substitution
+
+## Принцип подстановки Барбары Лисков
+
+Необходимо, чтобы подклассы могли служить для замены своих super-классов.
+
+Функции использующие базовый тип должны иметь возможность использовать его подтипы.
+
+Но в реальности (из-за дополнительных проверок логики) лучше 
+для обоих классов лучше использовать общий интерфейс, а не наследовать
+один класс от другого.
+
+```python
+"""
+BAD EXAMPLE
+"""
+
+class Rectangle:
+    def __init__(self, width: float, height: float):
+        self.width = width
+        self.height = height
+    
+    def set_width(self, width: float):
+        self.width = width
+    
+    def set_height(self, height: float):
+        self.height = height
+
+
+class Square(Rectangle):
+    def __init__(self, size: float):
+        super().__init__(size, size)
+
+    def set_width(self, width: float):
+        self.width = width
+        self.height = width
+    
+    def set_height(self, height: float):
+        self.height = height
+        self.width = height
+
+def make_fit(figure: Rectangle):
+    """
+    figure fit it it's have 20x50 form
+    """
+    figure.set_width(20)
+    figure.set_height(50)
+    
+    # expected figure 20x50 
+
+my_rec = Rectangle(10, 15)
+my_sq = Square(15)
+
+make_fit(my_rec) # 20x50
+make_fit(my_sq) # 50x50
+```
+
+В общем не стоило переопределять метод родительского класса.
+На крайняк тогда уж стоило делать абстрактный класс Figure,
+с абстр. методами изменения высоты и ширины, а от него уже
+наследовать все последующие.
+
+Это помогает выявлять проблемные абстракции и скрытые связи
+между сущностями, делать модули предсказуемыми.
+
+
+# Interface segregation
+
+## Принцип разделения (декомпозиции) интерфейсов
+
+Сущности не должны зависеть от интерфейсов, которые они используют.
+
+В общем нужно смотреть, чтобы класс потомок не получал херову тучу ненужной функциональности. 
+Поэтому нужно эти родительские классы декомпозировать, а не склеивать в один Бого-класс
+
+
+
+# Dependency inversion
+
+## Принцип инверсии зависимостей
+
+Модули высших уровней не должны зависеть от модулей низких уровней.
+Оба должны зависеть от абстракций.
+
+Абстракции не должны зависеть от деталей, детали должны зависеть от абстракций.
+
+Иначе:
+
+Верхне-уровневые сущности не должны зависеть от нижне-уровневых
+реализаций, а любые зависимости лучше всего выносить в абстракции.
+
+(цель: уменьшение межмодульных зависимостей)
+(как итог: читаемость, понятность, тестируемость)
+
+
+
+https://www.youtube.com/watch?v=A6wEkG4B38E
